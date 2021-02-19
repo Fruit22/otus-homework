@@ -1,0 +1,3 @@
+rootProject.name = 'homework'
+include 'first-k8s-hw'
+
