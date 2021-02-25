@@ -1,0 +1,8 @@
+fullnameOverride: postgres
+postgresqlUsername: user
+postgresqlPassword: "123456"
+postgresqlDatabase: myapp
+
+service:
+  type: NodePort
+  port: 5432

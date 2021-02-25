@@ -1,0 +1,38 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: crud-app
+    spec:
+      containers:
+        - name: crud-app
+          image: fruit22/app-crud:v4
+          env:
+            - name: DATASOURCE_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: DATASOURCE_URL
+                  name: crud-app-config-map
+            - name: USERNAME
+              valueFrom:
+                secretKeyRef:
+                 key: USERNAME
+                 name: crud-app-secret
+            - name: PASSWORD
+              valueFrom:
+                secretKeyRef:
+                 key: PASSWORD
+                 name: crud-app-secret
+          ports:
+            - name: web
+              containerPort: 8080
+  selector:
+    matchLabels:
+      app: crud-app
+

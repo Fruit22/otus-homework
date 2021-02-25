@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: ${DATASOURCE_URL}
+    username: ${USERNAME}
+    password: ${PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    generate-ddl: true

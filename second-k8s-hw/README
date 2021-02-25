@@ -1,0 +1,10 @@
+ --- Start database by HELM ---
+
+ cd ./k8s/db
+ helm repo add bitnami https://charts.bitnami.com/bitnami
+ helm install pg bitnami/postgresql -f postgres_values.yml
+
+ --- Deploy app by kubectl ---
+
+ cd ./k8s
+ kubectl apply -f app-config.yml -f app-deployment.yml -f app-service.yml -f app-ingres.yml
