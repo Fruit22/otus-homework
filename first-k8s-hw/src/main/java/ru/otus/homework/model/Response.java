@@ -1,4 +1,4 @@
-package ru.otus.homework.dto;
+package ru.otus.homework.model;
 
 import lombok.Value;
 
